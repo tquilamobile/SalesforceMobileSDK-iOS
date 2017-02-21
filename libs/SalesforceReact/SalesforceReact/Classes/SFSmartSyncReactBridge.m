@@ -124,7 +124,7 @@ RCT_EXPORT_METHOD(syncUp:(NSDictionary *)args callback:(RCTResponseSenderBlock)c
     if (sync.status == SFSyncStateStatusDone) {
         callback(@[[NSNull null], syncDict]);
     } else if (sync.status == SFSyncStateStatusFailed) {
-        callback(@[RCTMakeError(@"Sync failed", nil, nil), syncDict]);
+        callback(@[RCTMakeError(sync.message, nil, nil), syncDict]);
     }
 }
 

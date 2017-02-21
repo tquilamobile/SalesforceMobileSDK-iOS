@@ -43,6 +43,7 @@ NSString * const kSFSyncStateSoupName = @"soupName";
 NSString * const kSFSyncStateOptions = @"options";
 NSString * const kSFSyncStateStatus = @"status";
 NSString * const kSFSyncStateProgress = @"progress";
+NSString * const kSFSyncStateMessage = @"message";
 NSString * const kSFSyncStateTotalSize = @"totalSize";
 NSString * const kSyncStateMaxTimeStamp = @"maxTimeStamp";
 
@@ -161,6 +162,7 @@ NSString * const kSFSyncStateMergeModeLeaveIfChanged = @"LEAVE_IF_CHANGED";
     self.soupName = dict[kSFSyncStateSoupName];
     self.status = [SFSyncState syncStatusFromString:dict[kSFSyncStateStatus]];
     self.progress = [(NSNumber*) dict[kSFSyncStateProgress] integerValue];
+    self.message = dict[kSFSyncStateMessage];
     self.totalSize = [(NSNumber*) dict[kSFSyncStateTotalSize] integerValue];
     self.maxTimeStamp = [(NSNumber*) dict[kSyncStateMaxTimeStamp] longLongValue];
 }
@@ -174,6 +176,7 @@ NSString * const kSFSyncStateMergeModeLeaveIfChanged = @"LEAVE_IF_CHANGED";
     dict[kSFSyncStateSoupName] = self.soupName;
     dict[kSFSyncStateStatus] = [SFSyncState syncStatusToString:self.status];
     dict[kSFSyncStateProgress] = [NSNumber numberWithInteger:self.progress];
+    dict[kSFSyncStateMessage] = self.message;
     dict[kSFSyncStateTotalSize] = [NSNumber numberWithInteger:self.totalSize];
     dict[kSyncStateMaxTimeStamp] = [NSNumber numberWithLongLong:self.maxTimeStamp];
     return dict;

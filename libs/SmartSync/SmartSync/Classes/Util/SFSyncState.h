@@ -42,6 +42,7 @@ extern NSString * const kSFSyncStateSoupName;
 extern NSString * const kSFSyncStateOptions;
 extern NSString * const kSFSyncStateStatus;
 extern NSString * const kSFSyncStateProgress;
+extern NSString * const kSFSyncStateMessage;
 extern NSString * const kSFSyncStateTotalSize;
 extern NSString * const kSFSyncStateMaxTimeStamp;
 
@@ -86,6 +87,7 @@ extern NSString * const kSFSyncStateMergeModeLeaveIfChanged;
 @property (nonatomic, strong, readonly) SFSyncOptions* options;
 @property (nonatomic) SFSyncStateStatus status;
 @property (nonatomic) NSInteger progress;
+@property (nonatomic) NSString* message;
 @property (nonatomic) NSInteger totalSize;
 @property (nonatomic) SFSyncStateMergeMode mergeMode;
 @property (nonatomic) long long maxTimeStamp;
